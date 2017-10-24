@@ -20,39 +20,45 @@
 	
 
 	// for (i = 0; i <tigers.length; i++) {
-		var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=tigers";
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=tigers&api_key=dc6zaTOxFJmzC&limit=10";
 	
 	$.ajax({
         url: queryURL,
         method: "GET"
-      })
+      }).done(function(response){
 
-	// var results = response.data;
-
-	// for (var i = 0; i < results.length; i++) {
+     // console.log(response)
 
 
-// 	if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-//               // Creating a div with the class "item"
-//    var gifDiv = $("<div>");
+	var results = response.data;
+	// console.log(results)
+	for (var i = 0; i < results.length; i++) {
+		// console.log(results[i]);
 
-//    var rating = results[i].rating;
+	// if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+              // Creating a div with the class "item"
+   var gifDiv = $("<div>");
 
-//    var p = $("<p>").text("Rating: " + rating);
+   var rating = results[i].rating;
 
-// 	var personImage = $("<img>");
+   var p = $("<p>").text("Rating: " + rating);
 
-// 	personImage.attr("src", results[i].images.fixed_height.url);
+	var personImage = $("<img>");
 
-// gifDiv.append(p);
-//               gifDiv.append(personImage);
+	personImage.attr("src", results[i].images.fixed_height.url);
 
-//               // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-//               $("#gifs-appear-here").prepend(gifDiv);
-//           });
-//       });
-    // }   
-   
+    gifDiv.append(p);
+              gifDiv.append(personImage);
+console.log(gifDiv);
+              // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+              $("#images").prepend(gifDiv);
+         
+    // }   	
+
+  }
+
+});
+      });
   
 // //---------------------------------------Build and request---------------------------------------
 // 	 .done(function(response) {
@@ -91,7 +97,7 @@
 // 	request.send();
 // //});
 
-
+		
 		</script>
 	</body>
 </html>
