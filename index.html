@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+</head>
+<body>
+<button id="tiger-button">African Tigers</button>
+ <div id="images">
+ </div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script type="text/javascript">
+
+	$("#tiger-button").on("click", function() {
+	
+
+	// for (i = 0; i <tigers.length; i++) {
+		var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=tigers";
+	
+	$.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+	// var results = response.data;
+
+	// for (var i = 0; i < results.length; i++) {
+
+
+// 	if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+//               // Creating a div with the class "item"
+//    var gifDiv = $("<div>");
+
+//    var rating = results[i].rating;
+
+//    var p = $("<p>").text("Rating: " + rating);
+
+// 	var personImage = $("<img>");
+
+// 	personImage.attr("src", results[i].images.fixed_height.url);
+
+// gifDiv.append(p);
+//               gifDiv.append(personImage);
+
+//               // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+//               $("#gifs-appear-here").prepend(gifDiv);
+//           });
+//       });
+    // }   
+   
+  
+// //---------------------------------------Build and request---------------------------------------
+// 	 .done(function(response) {
+//         console.log(response)
+
+// 	var imageUrl = response.data.fixed_width_small_url;
+// // Creating and storing an image tag
+//         var tigerImage = $("<img>");
+
+// // Setting the catImage src attribute to imageUrl
+//         tigerImage.attr("src", imageUrl);
+//         tigerImage.attr("alt", "tiger image");
+
+
+// // Prepending the catImage to the images div
+//         $("#images").append(tigerImage);
+//       });
+//     });
+
+
+//----------------------------------Setup Building returned data function (JQuery knowing data is being given back)----------------------------------------------------------------
+	
+
+// 			var data = JSON.parse(request.responseText).data.image_url;//Var data gets given a response image URL
+// 			console.log(data);//Log this data in console
+// 			document.getElementById("giphyme").innerHTML = '<center><img src = "'+data+'"  title="GIF via Giphy"></center>';//Build HTML and display image
+// 		} else {
+// 			console.log('reached giphy, but API returned an error');//In Case of error (You could also do a try catch instead! and read that error)
+// 		 }
+// 	};
+
+// 	request.onerror = function() {//Incase you cant connect to Giphy at all
+// 		console.log('connection error');
+// 	};
+
+// 	request.send();
+// //});
+
+
+		</script>
+	</body>
+</html>
